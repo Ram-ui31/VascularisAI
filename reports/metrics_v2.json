@@ -1,0 +1,280 @@
+{
+  "protocol": "5-fold outer / 3-fold inner nested stratified CV",
+  "leakage_excluded": [
+    "LAD",
+    "LCX",
+    "RCA",
+    "Cath"
+  ],
+  "targets": {
+    "CAD": {
+      "metrics": {
+        "accuracy": 0.8581,
+        "precision": 0.9139,
+        "recall": 0.8843,
+        "f1": 0.8988,
+        "roc_auc": 0.8941,
+        "brier": 0.1144
+      },
+      "selected_final": {
+        "classifier": "LogisticRegression",
+        "classifier__C": 0.1,
+        "select__k": "all"
+      },
+      "fold_selections": [
+        {
+          "fold": 1,
+          "inner_auc": 0.9136,
+          "best": {
+            "classifier": "LogisticRegression",
+            "classifier__C": 1,
+            "select__k": 20
+          }
+        },
+        {
+          "fold": 2,
+          "inner_auc": 0.9156,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 2,
+            "classifier__gamma": 0.01,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 3,
+          "inner_auc": 0.9274,
+          "best": {
+            "classifier": "ExtraTreesClassifier",
+            "classifier__max_depth": null,
+            "classifier__min_samples_leaf": 3,
+            "select__k": 35
+          }
+        },
+        {
+          "fold": 4,
+          "inner_auc": 0.9229,
+          "best": {
+            "classifier": "LogisticRegression",
+            "classifier__C": 0.1,
+            "select__k": 35
+          }
+        },
+        {
+          "fold": 5,
+          "inner_auc": 0.9558,
+          "best": {
+            "classifier": "HistGradientBoostingClassifier",
+            "classifier__l2_regularization": 1,
+            "classifier__learning_rate": 0.04,
+            "classifier__max_leaf_nodes": 7,
+            "select__k": 35
+          }
+        }
+      ]
+    },
+    "LAD": {
+      "metrics": {
+        "accuracy": 0.769,
+        "precision": 0.7772,
+        "recall": 0.8475,
+        "f1": 0.8108,
+        "roc_auc": 0.8302,
+        "brier": 0.1605
+      },
+      "selected_final": {
+        "classifier": "HistGradientBoostingClassifier",
+        "classifier__l2_regularization": 1,
+        "classifier__learning_rate": 0.1,
+        "classifier__max_leaf_nodes": 15,
+        "select__k": 35
+      },
+      "fold_selections": [
+        {
+          "fold": 1,
+          "inner_auc": 0.8623,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 0.5,
+            "classifier__gamma": 0.01,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 2,
+          "inner_auc": 0.8583,
+          "best": {
+            "classifier": "LogisticRegression",
+            "classifier__C": 0.1,
+            "select__k": 20
+          }
+        },
+        {
+          "fold": 3,
+          "inner_auc": 0.8165,
+          "best": {
+            "classifier": "ExtraTreesClassifier",
+            "classifier__max_depth": 8,
+            "classifier__min_samples_leaf": 1,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 4,
+          "inner_auc": 0.8313,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 0.5,
+            "classifier__gamma": 0.01,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 5,
+          "inner_auc": 0.8333,
+          "best": {
+            "classifier": "ExtraTreesClassifier",
+            "classifier__max_depth": 8,
+            "classifier__min_samples_leaf": 1,
+            "select__k": "all"
+          }
+        }
+      ]
+    },
+    "LCX": {
+      "metrics": {
+        "accuracy": 0.6568,
+        "precision": 0.5743,
+        "recall": 0.4874,
+        "f1": 0.5273,
+        "roc_auc": 0.6923,
+        "brier": 0.2191
+      },
+      "selected_final": {
+        "classifier": "HistGradientBoostingClassifier",
+        "classifier__l2_regularization": 1,
+        "classifier__learning_rate": 0.1,
+        "classifier__max_leaf_nodes": 15,
+        "select__k": "all"
+      },
+      "fold_selections": [
+        {
+          "fold": 1,
+          "inner_auc": 0.7159,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 10,
+            "classifier__gamma": 0.01,
+            "select__k": 35
+          }
+        },
+        {
+          "fold": 2,
+          "inner_auc": 0.7244,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 0.5,
+            "classifier__gamma": 0.01,
+            "select__k": 20
+          }
+        },
+        {
+          "fold": 3,
+          "inner_auc": 0.6613,
+          "best": {
+            "classifier": "HistGradientBoostingClassifier",
+            "classifier__l2_regularization": 1,
+            "classifier__learning_rate": 0.04,
+            "classifier__max_leaf_nodes": 7,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 4,
+          "inner_auc": 0.7681,
+          "best": {
+            "classifier": "LogisticRegression",
+            "classifier__C": 0.1,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 5,
+          "inner_auc": 0.7267,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 2,
+            "classifier__gamma": 0.01,
+            "select__k": 35
+          }
+        }
+      ]
+    },
+    "RCA": {
+      "metrics": {
+        "accuracy": 0.67,
+        "precision": 0.5603,
+        "recall": 0.5702,
+        "f1": 0.5652,
+        "roc_auc": 0.7053,
+        "brier": 0.2139
+      },
+      "selected_final": {
+        "classifier": "SVC",
+        "classifier__C": 2,
+        "classifier__gamma": "scale",
+        "select__k": 35
+      },
+      "fold_selections": [
+        {
+          "fold": 1,
+          "inner_auc": 0.7523,
+          "best": {
+            "classifier": "LogisticRegression",
+            "classifier__C": 0.1,
+            "select__k": "all"
+          }
+        },
+        {
+          "fold": 2,
+          "inner_auc": 0.7587,
+          "best": {
+            "classifier": "LogisticRegression",
+            "classifier__C": 0.1,
+            "select__k": 35
+          }
+        },
+        {
+          "fold": 3,
+          "inner_auc": 0.7343,
+          "best": {
+            "classifier": "ExtraTreesClassifier",
+            "classifier__max_depth": 8,
+            "classifier__min_samples_leaf": 6,
+            "select__k": 35
+          }
+        },
+        {
+          "fold": 4,
+          "inner_auc": 0.748,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 10,
+            "classifier__gamma": 0.01,
+            "select__k": 20
+          }
+        },
+        {
+          "fold": 5,
+          "inner_auc": 0.7347,
+          "best": {
+            "classifier": "SVC",
+            "classifier__C": 0.5,
+            "classifier__gamma": 0.01,
+            "select__k": "all"
+          }
+        }
+      ]
+    }
+  }
+}

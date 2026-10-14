@@ -1,0 +1,35 @@
+{
+  "protocol": "shared shuffled stratified 10-fold CV seed 42; TabPFN pretrained; fold-contained imputation/encoding",
+  "leakage_excluded": [
+    "LAD",
+    "LCX",
+    "RCA",
+    "Cath"
+  ],
+  "targets": {
+    "LAD": {
+      "accuracy": 0.7987,
+      "precision": 0.8021,
+      "recall": 0.8701,
+      "f1": 0.8347,
+      "roc_auc": 0.8443,
+      "brier": 0.1543
+    },
+    "LCX": {
+      "accuracy": 0.6667,
+      "precision": 0.59,
+      "recall": 0.4958,
+      "f1": 0.5388,
+      "roc_auc": 0.7263,
+      "brier": 0.2045
+    },
+    "RCA": {
+      "accuracy": 0.6733,
+      "precision": 0.5904,
+      "recall": 0.4298,
+      "f1": 0.4975,
+      "roc_auc": 0.7293,
+      "brier": 0.2013
+    }
+  }
+}

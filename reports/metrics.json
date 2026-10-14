@@ -1,0 +1,127 @@
+{
+  "dataset": {
+    "source": "UCI 411",
+    "rows": 303,
+    "input_features": 55,
+    "excluded_for_leakage": [
+      "LAD",
+      "LCX",
+      "RCA",
+      "Cath"
+    ]
+  },
+  "targets": {
+    "CAD": {
+      "positive": 216,
+      "negative": 87,
+      "selected_model": "logistic_regression",
+      "metrics": {
+        "accuracy": 0.8713,
+        "precision": 0.9317,
+        "recall": 0.8843,
+        "f1": 0.9074,
+        "roc_auc": 0.9303
+      },
+      "candidates": {
+        "logistic_regression": {
+          "accuracy": 0.8713,
+          "precision": 0.9317,
+          "recall": 0.8843,
+          "f1": 0.9074,
+          "roc_auc": 0.9303
+        },
+        "extra_trees": {
+          "accuracy": 0.868,
+          "precision": 0.9356,
+          "recall": 0.875,
+          "f1": 0.9043,
+          "roc_auc": 0.9202
+        }
+      }
+    },
+    "LAD": {
+      "positive": 177,
+      "negative": 126,
+      "selected_model": "extra_trees",
+      "metrics": {
+        "accuracy": 0.7789,
+        "precision": 0.7957,
+        "recall": 0.8362,
+        "f1": 0.8154,
+        "roc_auc": 0.832
+      },
+      "candidates": {
+        "logistic_regression": {
+          "accuracy": 0.7327,
+          "precision": 0.7963,
+          "recall": 0.7288,
+          "f1": 0.7611,
+          "roc_auc": 0.8149
+        },
+        "extra_trees": {
+          "accuracy": 0.7789,
+          "precision": 0.7957,
+          "recall": 0.8362,
+          "f1": 0.8154,
+          "roc_auc": 0.832
+        }
+      }
+    },
+    "LCX": {
+      "positive": 119,
+      "negative": 184,
+      "selected_model": "extra_trees",
+      "metrics": {
+        "accuracy": 0.6271,
+        "precision": 0.5221,
+        "recall": 0.5966,
+        "f1": 0.5569,
+        "roc_auc": 0.6828
+      },
+      "candidates": {
+        "logistic_regression": {
+          "accuracy": 0.6238,
+          "precision": 0.5172,
+          "recall": 0.6303,
+          "f1": 0.5682,
+          "roc_auc": 0.6608
+        },
+        "extra_trees": {
+          "accuracy": 0.6271,
+          "precision": 0.5221,
+          "recall": 0.5966,
+          "f1": 0.5569,
+          "roc_auc": 0.6828
+        }
+      }
+    },
+    "RCA": {
+      "positive": 114,
+      "negative": 189,
+      "selected_model": "extra_trees",
+      "metrics": {
+        "accuracy": 0.6436,
+        "precision": 0.5217,
+        "recall": 0.6316,
+        "f1": 0.5714,
+        "roc_auc": 0.7214
+      },
+      "candidates": {
+        "logistic_regression": {
+          "accuracy": 0.6634,
+          "precision": 0.5441,
+          "recall": 0.6491,
+          "f1": 0.592,
+          "roc_auc": 0.7055
+        },
+        "extra_trees": {
+          "accuracy": 0.6436,
+          "precision": 0.5217,
+          "recall": 0.6316,
+          "f1": 0.5714,
+          "roc_auc": 0.7214
+        }
+      }
+    }
+  }
+}

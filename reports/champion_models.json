@@ -1,0 +1,30 @@
+{
+  "selection_policy": "Prefer higher out-of-fold ROC-AUC; break material ties using F1 and calibration. Never select using training accuracy.",
+  "validation": "5-fold stratified out-of-fold predictions; LAD/LCX/RCA/Cath excluded from every input pipeline",
+  "champions": {
+    "CAD": {
+      "architecture": "class-weighted logistic regression",
+      "accuracy": 0.8713,
+      "f1": 0.9074,
+      "roc_auc": 0.9303
+    },
+    "LAD": {
+      "architecture": "nested probability blend: Extra Trees + CatBoost + heterogeneous stack",
+      "accuracy": 0.7954,
+      "f1_at_0.5": 0.8101,
+      "roc_auc": 0.846
+    },
+    "LCX": {
+      "architecture": "CatBoost with fold-contained inner tuning",
+      "accuracy": 0.6766,
+      "f1": 0.5702,
+      "roc_auc": 0.7204
+    },
+    "RCA": {
+      "architecture": "nested probability blend: Extra Trees + CatBoost + heterogeneous stack",
+      "accuracy": 0.6898,
+      "f1_at_0.5": 0.5935,
+      "roc_auc": 0.743
+    }
+  }
+}
